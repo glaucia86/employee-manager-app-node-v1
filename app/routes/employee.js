@@ -44,4 +44,29 @@ var Employee = require('../models/employee');
                 res.json(employee);
         });
     }
-    
+
+/** 4) Método: DeleteEmployee (acessar em: DELETE http://localhost:8000/employee/:id ) */
+    function deleteEmployee(req, res) {
+        Employee.remove({ _id: req.params.id }, function(error, resultado) {
+            res.json({ message: "Employee deleted successfully!", resultado });
+        });
+    }
+
+/* 5) Método: UpdateEmployee (acessar em: PUT http://localhost:8000/employee/:id ) */
+    function updateEmployee(req, res) {
+        //Para que eu possa atualizar um funcionário, preciso primeiramente encontrar o id do funcionário que desejo atualizar:
+        Employee.findById({ _id: req.params.id }, function(error, employee) {
+            if(error)
+                res.send(error);
+ 
+            //Caso não haja erros, retornar a atualização para o usuário:
+            Object.assign(employee, req.body).save(function(error, employee) {
+                if(error)
+                    res.send(error);
+                res.json({ message: "Employee updated successfully!", employee });
+            });
+        });
+    }
+
+//Aqui iremos exportar todas as funções criadas acima:
+module.exports = { getAll, addEmployee, getById, deleteEmployee, updateEmployee };
