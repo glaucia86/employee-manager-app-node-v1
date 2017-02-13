@@ -1,5 +1,5 @@
 {
-  "name": "livraria-app",
+  "name": "app-manager-employee",
   "version": "1.0.0",
   "description": "Luizalabs Employee Manager Application (Versão Node.Js)",
   "main": "server.js",
