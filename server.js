@@ -18,4 +18,29 @@ moongose.connect(config.DBHost, options);
 var db = moongose.connection;
 db.on('error', console.error.bind(console, 'Erro ao conectar com a Base de Dados '));
 
-//Logs dos Testes realizados:
+//Os Logs dos Testes realizados:
+if(config.util.getEnv('NODE_ENV') !== 'test') {
+    app.use(morgan('combined'));
+}
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: 'application/json' }));
+
+app.get("/", (req, res)=> res.json({ message: "Welcome to Luizalabs Employee Manager Application" }));
+
+//Definindo as rotas para: GET & POST:
+app.route("/employee")
+    .get(employee.getAll)
+    .post(employee.addEmployee);
+
+app.route("/employee/:id")
+    .put(employee.getById)
+    .delete(employee.deleteEmployee)
+    .put(employee.updateEmployee);
+
+app.listen(port);
+console.log("Aplicação executando na porta " + port);
+
+module.exports = app;
