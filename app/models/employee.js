@@ -22,3 +22,5 @@ var EmployeeSchema = new Schema(
     }
 );
 
+//Aqui realizará a exportação do 'LivroSchema' para usar em qualquer lugar:
+module.exports = mongoose.model('employee', EmployeeSchema);
