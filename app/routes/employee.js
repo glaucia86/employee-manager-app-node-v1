@@ -19,3 +19,29 @@ var Employee = require('../models/employee');
             res.json(employees)
         });       
     }
+
+/* 2) Método: Create Employee (acessar em: POST http://localhost:8000/employee) */
+    function addEmployee(req, res) {
+
+        //Criando um novo Funcionário:
+        var newEmployee = new Employee(req.body) {
+            newEmployee.save(function(error, Employee) {
+                if(error) {
+                    res.send(error);
+                } else {
+                    res.json({ message: "Employee added successfully!" });
+                }
+            });
+        }
+
+/** 3)  Método: GetById (acessar em: GET http://localhost:8000/employee/:id ) */
+    function getById(req, res) {
+        Employee.findById(req.params.id, function(error, employee) {
+            if(error)
+                res.send(error);
+ 
+                //Caso não haja erros, retornar para o usuário:
+                res.json(employee);
+        });
+    }
+    
