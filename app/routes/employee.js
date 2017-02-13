@@ -8,4 +8,14 @@
 var mongoose = require('mongoose');
 var Employee = require('../models/employee');
 
-/* 1) Método: Selecionar Livros (acessar em: GET http://localhost:8000/livro */
+/* 1) Método: GetAll (Selecionar Todos Funcionários) (acessar em: GET http://localhost:8000/employee */
+    function getAll(req, res) {
+
+        //Query para retornar todos os funcionários:
+        var query = Employee.find({});
+        query.exec(function(error, employees) {
+            if(error)
+                res.send(error);
+            res.json(employees)
+        });       
+    }
