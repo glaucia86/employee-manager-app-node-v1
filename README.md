@@ -2,9 +2,9 @@
 
 Desenvolvimento de uma web app 'fictícia' em Node.Js, Express.js, MongoDb e com TDD (Mocha & Chai) 
 que simulará uma aplicação que gerenciará as informações do funcionários através de uma API 
-que permita integrá-la a outros sistemas. A aplicação precisa ter:
+que permite integrá-la a outros sistemas. A aplicação precisa ter:
 
-* Api que precise gerenciar os dados dos empregados e que consequentemente necessite integrar essa api a outros sistemas da empresa;
+* A Api precisará gerenciar os dados de todos os empregados e que consequentemente necessite integrar essa api a outros sistemas da empresa;
 * E uma API que permita: listar, adicionar e remover os empregados (somente o Admin);
 
 Essa versão é a v.1 do projeto. Sendo assim, uma app básica que irá receber os verbos do HTTP. (Back-End)
