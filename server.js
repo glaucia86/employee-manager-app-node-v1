@@ -14,3 +14,8 @@ var employee = require('./app/routes/employee');
 var config = require('config'); //->> aqui estaremos carregando a localização da base de dados através dos arquivos JSON.
  
 //Opção das bases de dados:
+moongose.connect(config.DBHost, options);
+var db = moongose.connection;
+db.on('error', console.error.bind(console, 'Erro ao conectar com a Base de Dados '));
+
+//Logs dos Testes realizados:
