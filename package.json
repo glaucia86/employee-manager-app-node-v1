@@ -1,0 +1,29 @@
+{
+  "name": "livraria-app",
+  "version": "1.0.0",
+  "description": "Luizalabs Employee Manager Application (Versão Node.Js)",
+  "main": "server.js",
+  "author": "Glaucia Lemos",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "config": "^1.20.1",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.15",
+    "morgan": "^1.7.0",
+    "use-strict": "^1.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha --timeout 10000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glaucia86/employee-manager-app-node-v1"
+  }
+}
