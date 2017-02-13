@@ -5,3 +5,20 @@
  *  de dados via Moongose.
  * Data: 13/02/2017
  */
+
+var mongoose = require('mongoose');
+var validator = require('validator');
+var Schema = mongoose.Schema;
+
+//Classe Modelo: Employee
+var EmployeeSchema = new Schema(
+    {
+        name: { type: String, required: true },
+        email: { type: String, required: true, validate: [isEmail, 'invalid email'] },
+        department: { type: String, required: true }
+    },
+    {
+        versionKey: false
+    }
+);
+

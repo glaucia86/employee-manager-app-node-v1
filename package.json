@@ -16,7 +16,8 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "validator-js": "^0.2.1"
   },
   "scripts": {
     "start": "node server.js",
