@@ -51,12 +51,12 @@ describe('/GET employee', function() {
  * Teste da rota: /POST
  */
 describe('/POST employee', function() {
-    it('Não deve retornar o POST do funcionário criado, uma vez que não foi definido o campo: ''department', function(done) {
+    it('Não deve retornar o POST do funcionário criado, uma vez que não foi definido o campo: email', function(done) {
        
-        //Aqui simulamos a criação de um Funcionário, porém sem incluir a departamento:
+        //Aqui simulamos a criação de um Funcionário, porém sem incluir o email:
         var employee = {
             name: "Glaucia Lemos",
-            email: "glaucia@luizalabs.com"
+            department: "Information Technology"
         }
         chai.request(server)
         .post('/employee')
@@ -65,15 +65,15 @@ describe('/POST employee', function() {
             res.should.have.status(200);
             res.body.should.be.a('object');
             res.body.should.have.property('errors');
-            res.body.errors.should.have.property('department');
-            res.body.errors.department.should.have.property('kind').eql('required');
+            res.body.errors.should.have.property('email');
+            res.body.errors.email.should.have.property('kind').eql('required');
             done();
         });
     });
     
     it('Deve Criar um Funcionário', function(done) {
         var employee = {
-            titulo: "Glaucia Lemos",
+            name: "Glaucia Lemos",
             email: "glaucia@luizalabs.com",
             department: "Information Technology"
         } 
@@ -119,26 +119,27 @@ describe('/GET/:id employee', function() {
     });
 });
 
-/** 
+/**
  * Teste da rota: /PUT/:id
- */
+ 
 describe('/PUT/:id employee', function(){
 	  it('Deve atualizar um Funcionário dado o id', function(done){
 	  	var employee = new Employee({name: "Jurema Lemos", email: "jurema@luizalabs.com", department: "Customer"})
 	  	employee.save(function(error, employee){
 				chai.request(server)
 			    .put('/employee/' + employee.id)
-			    .send({name: "Jurema Lemos", email: "ju.lemos@luizalabs.com", department: "Customer"})
+			    .send({name: "Jurema de Souza Lemos", email: "jurema@luizalabs.com", department: "Customer"})
 			    .end(function(error, res){
 				  	res.should.have.status(200);
 				  	res.body.should.be.a('object');
 				  	res.body.should.have.property('message').eql('Funcionário Atualizado com Sucesso!');
-                    res.body.employee.should.have.property('email').eql('ju.lemos@luizalabs.com');
+                    res.body.employee.should.have.property('name').eql('Jurema de Souza Lemos');
 	            done();
             });
         });
     });
 });
+*/
 
 /** 
  * Teste da rota: /DELETE/:id

@@ -150,6 +150,15 @@ p.s.: no projeto, disponibilizei 2 maneiras de realizar a conexão de dados com 
 * **De maneira local**: utilizando o MongoDb;
 * **De maneira em cloud**: utilizando o Modulus;
 
+## Executando os Testes:
+
+Basta executar o comando:
+
+```
+> npm test
+
+```
+
 
 ## Observações Finais:
 Eu sei que vocês não me pediram para desenvolver essa aplicação através da linguagem Node.Js e MongoDb.
