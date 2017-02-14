@@ -1,3 +1,4 @@
 {
-    "DBHost": "URI_DO_SEU_DB_AQUI"
+	"DBHost": "mongodb://root:123456@jello.modulusmongo.net:27017/ity3Ryje"
+	//"DBHost": "mongodb://localhost/node-api"
 }

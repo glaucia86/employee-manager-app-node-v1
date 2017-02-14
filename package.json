@@ -1,7 +1,7 @@
 {
-  "name": "app-manager-employee",
+  "name": "luizalabs-manager-employee-app",
   "version": "1.0.0",
-  "description": "Luizalabs Employee Manager Application (Versão Node.Js)",
+  "description": "Luizalabs Employee Manager Application",
   "main": "server.js",
   "author": "Glaucia Lemos",
   "license": "ISC",
@@ -16,8 +16,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
-    "mocha": "^2.4.5",
-    "validator-js": "^0.2.1"
+    "mocha": "^2.4.5"
   },
   "scripts": {
     "start": "node server.js",
@@ -25,6 +24,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/glaucia86/employee-manager-app-node-v1"
+    "url": "https://github.com/glaucia86/employee-manager-app-node-v1/blob/master/server.js"
   }
 }
